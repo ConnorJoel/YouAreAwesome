@@ -8,15 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var messageString = ""
+    @State var messageString = "When the genius bar needs help they call you!"
     
     var body: some View {
+        
         VStack {
             Text(messageString)
                 .font(.largeTitle)
                 .fontWeight(.heavy)
+                .minimumScaleFactor(0.5)
+                .multilineTextAlignment(.center)
                 .foregroundColor(.red)
+                .frame(height: 150)
+                .frame(maxWidth: .infinity)
+                .border(.orange, width: 1.0)
                 .padding()
+            
             HStack {
                 Button("Awesome") {
                     // This is the action
@@ -30,6 +37,7 @@ struct ContentView: View {
                 }
                 .buttonStyle(.borderedProminent)
             }
+            .border(.purple, width: 5.0)
         }
     }
 }
